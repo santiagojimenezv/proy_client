@@ -1,0 +1,28 @@
+@import "../../../../src/scss/index.scss";
+
+.menu-top {
+    display: felx;
+    button {
+        color: $font-grey-dark;
+
+        &:hover {
+            color: $primary-color-hover;
+        }
+        &:focus,
+        &:active {
+            color: $primary-color;
+        }
+    }
+
+    &_left {
+        &_logo {
+            width: 70px;
+            padding: 0 10px;
+        }
+    }
+
+    &_right {
+        position: absolute;
+        right: 0;
+    }
+}

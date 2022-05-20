@@ -1,27 +1,27 @@
 import LayoutAdmin from "../layouts/LayoutAdmin";
 import LayoutBasic from "../layouts/LayoutBasic";
-
-/* Páginas del administrador */
+/* Importamos los pages */
 import AdminHome from "../pages/Admin";
-import AdminSignIn from "../pages/Admin/signIn";
-import Home from "../pages/home";
-import Contact from "../pages/contact";
+import AdminSignIn from "../pages/Admin/SignIn";
+import Home from "../pages/Home";
 import NotFound from "../pages/NotFound/NotFound";
+import Contact from "../pages/Contact";
 
-/* Rutas disponibles para el administrador */
-const AdminRoutes = [
+const routesAdmin = [
   {
-    path: "/admin",
+    path: "/admin/*",
     layout: LayoutAdmin,
     component: AdminHome,
   },
   {
-    path: "/admin/login",
+    path: "/admin/login/*",
     layout: LayoutAdmin,
     component: AdminSignIn,
   },
 ];
-const ClientRoutes = [
+
+/* Ruta home, notfound */
+const routesClient = [
   {
     path: "/",
     layout: LayoutBasic,
@@ -33,12 +33,14 @@ const ClientRoutes = [
     component: Contact,
   },
 ];
-const NotFoundRoute = [
+
+const routeNotFound = [
   {
     path: "*",
     layout: LayoutBasic,
     component: NotFound,
   },
 ];
-const routes = [...AdminRoutes, ...ClientRoutes, ...NotFoundRoute];
+
+const routes = [...routesAdmin, ...routesClient, ...routeNotFound];
 export default routes;

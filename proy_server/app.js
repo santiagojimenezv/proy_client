@@ -8,6 +8,7 @@ const userRoutes = require("./src/routes/user");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+/* evitar bloqueo del cors */
 
 /* Creación de los endpoint del proyecto */
 app.use(`/api/${API_VERSION}`, userRoutes);
